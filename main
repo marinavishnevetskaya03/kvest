@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послання від Таємного Друга</title>
+    <style>
+        body {
+            background-color: #ffe6f2; /* Ніжно-рожевий фон */
+            color: #4b0082; /* Темно-фіолетовий текст */
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.5); /* Напівпрозорий білий фон для тексту */
+            padding: 40px;
+            border-radius: 20px;
+            border: 2px dashed #8a2be2; /* Фіолетова пунктирна рамка */
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.15);
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+        }
+        input {
+            padding: 12px;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            color: #4b0082;
+            background-color: #fff0f5;
+            border: 1px solid #8a2be2;
+            border-radius: 10px;
+            outline: none;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+        button {
+            background-color: #dda0dd; /* Світло-фіолетова кнопка */
+            color: #4b0082;
+            border: 2px solid #8a2be2;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ba55d3;
+            color: white;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🌸 Таємне послання 🌸</h1>
+        <p>Щоб дізнатися координати свого наступного подарунка, введи наш табірний пароль:</p>
+        
+        <input type="text" id="password" placeholder="Введи пароль..." autocomplete="off">
+        <br>
+        <button onclick="checkPassword()">Відкрити таємницю</button>
+        
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            // Пароль вже встановлено на "ромашка"
+            const correctPassword = "ромашка"; 
+            
+            const pwd = document.getElementById('password').value.toLowerCase().trim();
+            const resultDiv = document.getElementById('result');
+            
+            if (pwd === correctPassword) {
+                resultDiv.innerHTML = "✨ ПАРОЛЬ ПРИЙНЯТО! ✨<br><br>Твій солодкий допінг чекає на тебе <strong>[ТУТ ВПИШИ ЛОКАЦІЮ, наприклад: під подушкою на твоєму ліжку]</strong>. Забирай і набирайся сил!";
+                resultDiv.style.color = "#4b0082";
+            } else {
+                resultDiv.innerHTML = "Ой, не те! Згадай наші приколи і спробуй ще раз 😉";
+                resultDiv.style.color = "red";
+            }
+        }
+    </script>
+
+</body>
+</html>
